@@ -7,8 +7,10 @@ import Incidents from './pages/Incidents'
 import Settings from './pages/Settings'
 
 function App() {
+  const basename = import.meta.env.PROD ? '/withskill' : ''
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <ThemeProvider>
         <SettingsProvider>
           <AppShell>
