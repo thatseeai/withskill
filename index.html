@@ -11,13 +11,25 @@
 
     <!-- GitHub Pages SPA redirect handling -->
     <script>
-      (function() {
-        var redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        if (redirect && redirect !== location.href) {
-          history.replaceState(null, null, redirect);
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        } else {
+          var redirect = sessionStorage.getItem('redirect');
+          if (redirect && redirect !== '') {
+            sessionStorage.removeItem('redirect');
+            var decodedPath = redirect.split('&').map(function(s) {
+              return s.replace(/~and~/g, '&')
+            }).join('?');
+            window.history.replaceState(null, null, l.pathname + decodedPath);
+          }
         }
-      })();
+      }(window.location));
     </script>
   </head>
   <body>
