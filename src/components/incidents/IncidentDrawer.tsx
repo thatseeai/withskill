@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { X, CheckCircle2, Eye, AlertCircle, Clock, User, Send } from 'lucide-react'
+import { X, CheckCircle2, Eye, AlertCircle, Clock, Send } from 'lucide-react'
 import { Incident } from '@/types/incident'
 import { SeverityBadge, StatusBadge } from '@/components/common/StatusBadge'
 import { formatDate, formatRelativeTime } from '@/utils/dateFormat'

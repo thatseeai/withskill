@@ -1,4 +1,4 @@
-import { LucideIcon, TrendingUp, TrendingDown } from 'lucide-react'
+import { TrendingUp, TrendingDown } from 'lucide-react'
 import { KPI } from '@/types/kpi'
 import { cn } from '@/lib/utils'
 import * as Icons from 'lucide-react'
@@ -9,7 +9,7 @@ interface KPICardProps {
 }
 
 export function KPICard({ kpi, index = 0 }: KPICardProps) {
-  const Icon = (Icons as Record<string, LucideIcon>)[kpi.icon] || Icons.Activity
+  const Icon = (Icons as any)[kpi.icon] || Icons.Activity
 
   // Determine if delta is good or bad based on direction preference
   const isPositive =

@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { mockIncidents } from '@/data/mock'
-import { Incident, Severity, Status } from '@/types/incident'
+import { Incident, Severity } from '@/types/incident'
 import { getSeverityOrder } from '@/utils/severity'
 import { useDebounce } from '@/hooks/useDebounce'
 import { FilterPanel } from '@/components/incidents/FilterPanel'

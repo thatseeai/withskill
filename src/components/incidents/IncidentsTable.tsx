@@ -1,4 +1,4 @@
-import { Incident, Severity } from '@/types/incident'
+import { Incident } from '@/types/incident'
 import { SeverityBadge, StatusBadge } from '@/components/common/StatusBadge'
 import { formatRelativeTime, formatDuration } from '@/utils/dateFormat'
 import { ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react'
